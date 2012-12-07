@@ -11,7 +11,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', HomeView.as_view()),
-    url(r'^(?P<slug>[\w-]+)/$', IndexCardDetail.as_view(), name='detail'),
+    url(r'^card/(?P<slug>[\w-]+)/$', IndexCardDetail.as_view(), name='detail'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^complete/(?P<backend>[^/]+)/$', AuthComplete.as_view()),
     url(r'^login-error/$', LoginError.as_view()),
