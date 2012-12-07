@@ -39,7 +39,7 @@ AWS_QUERYSTRING_AUTH = False
 AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME', 'index.incuna.com')
 AWS_CLOUDFRONT_DOMAIN = os.environ.get('AWS_CLOUDFRONT_DOMAIN')
 AWS_CLOUDFRONT_STREAMING_DOMAIN = os.environ.get('AWS_CLOUDFRONT_STREAMING_DOMAIN')
-DEFAULT_FILE_STORAGE = 'cloudfront.cloudfrontstorage.CouldFrontStorage'
+DEFAULT_FILE_STORAGE = os.environ.get('DEFAULT_FILE_STORAGE', 'incuna.storage_backends.S3MediaStorage')
 STATICFILES_STORAGE = os.environ.get('STATICFILES_STORAGE', 'incuna.storage_backends.S3StaticStorage')
 S3_URL = 'http://{0}.s3.amazonaws.com/'.format(AWS_STORAGE_BUCKET_NAME)
 

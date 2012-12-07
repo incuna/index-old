@@ -19,5 +19,5 @@ south==0.7.6
 
 
 # incuna
-django-incuna==2.21.3
+django-incuna==2.21.5
 
