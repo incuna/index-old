@@ -97,7 +97,6 @@ INSTALLED_APPS = (
     'index',
 
     # Libraries
-    'incuna_auth',
     'incuna.admin',
     'incuna',
     'south',
