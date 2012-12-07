@@ -1,3 +1,5 @@
+import logging
+
 from django.core.urlresolvers import reverse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -10,6 +12,9 @@ from social_auth.backends.exceptions import AuthFailed
 from social_auth.views import complete
 
 from .models import CardImage, IndexCard, Tag
+
+
+logger = logging.getLogger(__name__)
 
 
 class HomeView(ListView):
@@ -36,9 +41,10 @@ class AuthComplete(View):
         backend = kwargs.pop('backend')
         try:
             return complete(request, backend, *args, **kwargs)
-        except AuthFailed:
+        except AuthFailed as e:
+            logger.error(e)
             messages.error(request, "Your Google Apps domain isn't authorized for this app")
-            return HttpResponseRedirect(reverse('login'))
+            return HttpResponseRedirect('/')
 
 
 class LoginError(View):
