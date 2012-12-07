@@ -16,7 +16,7 @@ DEVELOPMENT_SITE = bool(os.environ.get('DEVELOPMENT_SITE', False))
 DATABASES = {'default': dj_database_url.config(default='postgres://localhost/index')}
 CACHES = {'default': django_cache_url.config()}
 
-ADMINS = (('Admin', 'bugs@incuna.com'),)
+ADMINS = (('Admin', 'admin@incuna.com'),)
 MANAGERS = ADMINS
 ADMIN_EMAILS = zip(*ADMINS)[1]
 EMAIL_SUBJECT_PREFIX = '[index] '
@@ -78,8 +78,8 @@ AUTHENTICATION_BACKENDS = (
     'social_auth.backends.google.GoogleOAuth2Backend',
     'django.contrib.auth.backends.ModelBackend',
 )
-LOGIN_URL = reverse_lazy('login')
 LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = reverse_lazy('login')
 
 GOOGLE_OAUTH2_CLIENT_ID = os.environ['GOOGLE_OAUTH2_CLIENT_ID']
 GOOGLE_OAUTH2_CLIENT_SECRET = os.environ['GOOGLE_OAUTH2_CLIENT_SECRET']
@@ -117,27 +117,47 @@ INSTALLED_APPS = (
     'django.contrib.admin',
 )
 
-SENTRY_TESTING = DEBUG
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
+    'formatters': {
+        'console': {
+            'format': '[%(asctime)s][%(levelname)s] %(name)s %(filename)s:%(funcName)s:%(lineno)d | %(message)s',
+            'datefmt': '%H:%M:%S',
+        },
+    },
     'filters': {
         'require_debug_false': {
-            '()': 'django.utils.log.RequireDebugFalse'
+            '()': 'django.utils.log.RequireDebugFalse',
         }
     },
     'handlers': {
-        'mail_admins': {
-            'level': 'ERROR',
+        'sentry': {
+            'level': 'DEBUG',
             'filters': ['require_debug_false'],
-            'class': 'django.utils.log.AdminEmailHandler'
-        }
+            'class': 'raven.contrib.django.handlers.SentryHandler',
+        },
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'console',
+        },
     },
     'loggers': {
         'django.request': {
-            'handlers': ['mail_admins'],
+            'handlers': ['sentry', 'console'],
             'level': 'ERROR',
             'propagate': True,
+        },
+        'incuna.default': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propogate': True,
+        },
+        'sentry.errors': {
+            'handlers': ['console'],
+            'level': 'ERROR',
+            'propogate': True,
         },
     }
 }
