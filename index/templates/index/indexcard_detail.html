@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+
+
+{% block content %}
+<h1>{{ object }} - {{ object.created }} by {{ object.user }}</h1>
+    {% if object.tags %}
+    <ul id="filter">
+        <li class="current"><a href="#">All</a></li>
+        {% for tag in object.tags.all %}
+            <li><a href="#">{{ tag.name }}</a></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <div class="clear-fix"></div>
+
+
+{% endblock content %}

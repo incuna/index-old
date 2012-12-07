@@ -1,0 +1,95 @@
+body{
+    background: #ECECEC url(body-bg.png) repeat-x;
+    color: #CCC;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+header{
+    background: url(header-bg.png) no-repeat 0 30px;
+    width: 1200px;
+    height: 200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+header h1{
+     font-family: 'Signika', Arial, serif; font-weight: 600;
+     font-size: 40px;
+     color: #FF6666;
+     padding: 80px 0 30px 120px;
+}
+header p{
+    color: #FF6666;
+    font-size: 12px;
+    padding-left: 120px;
+}
+div#paper-clip{
+    width: 180px;
+    height: 127px;
+    background: url(paper-clip-bg.png) no-repeat;
+    position: absolute;
+    top: 40px;
+    right: 220px;
+}
+div#paper-clip p{
+    padding: 70px 60px;
+}
+.main{
+    width: 960px;
+    margin:10px auto;
+}
+
+.main h2{
+    font-size: 36px;
+    margin: 20px 0;
+}
+.main h2 span.active-tag{
+    color: #888;
+}
+ul#filter{
+    margin: 12px 0;
+    width: 460px;
+    /*overflow: hidden;*/
+}
+ul#filter li{
+    list-style: none;
+    float: left;
+    font-size: 28px;
+    margin-right: 8px;
+    line-height:32px;
+}
+ul#filter li a{
+    color: #FF6666;
+    text-decoration: none;
+}
+ul#filter li a:hover{
+    color: #CCCCCC;
+    text-decoration: underline;
+}
+ul#filter li:after{
+    content:",";
+    color: #FF6666;
+}
+ul#filter li:last-of-type::after{
+    content:"";
+}
+
+ul#filter li.current a{
+    color: #888;
+}
+ul#resources{
+    margin-left: 0;
+    /*overflow: hidden;*/
+}
+ul#resources li{
+    list-style: none;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+ul#resources li img{
+    background: #fff;
+    border: 1px solid #CCC;
+}
+.clear-fix{
+    clear: both;
+}

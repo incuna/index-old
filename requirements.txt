@@ -1,0 +1,24 @@
+--extra-index-url http://incuna:vY3en9bw9d9XHxRcec@pypi.incuna.com/
+
+boto==2.6.0
+dj-database-url==0.2.1
+django-cache-url==0.3.2
+django-debug-toolbar==0.9.4
+django-extensions==0.9
+django-pagination==1.0.7
+django-social-auth==0.6.9
+django-storages==1.1.4
+django==1.4.2
+gunicorn==0.16.1
+pillow==1.7.8
+psycopg2==2.4.5
+pylibmc==1.2.3
+raven==2.0.10
+sorl-thumbnail==11.12
+south==0.7.6
+
+
+# incuna
+django-incuna==2.21.3
+incuna-auth==0.7.1
+

@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+
+{% block content %}
+<h1><a href="{% url socialauth_begin 'google-oauth2' %}">Log in with your incuna.com email address</a></h1>
+{% endblock content %}

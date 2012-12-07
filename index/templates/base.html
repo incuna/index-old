@@ -1,0 +1,70 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>{% block title %}{% endblock title %}</title>
+
+  <meta name="viewport" content="width=device-width">
+
+  {% block base_style %}
+  <link rel="stylesheet" href="{{ STATIC_URL }}styles/main.css">
+  {% endblock base_style %}
+
+  {% block extra_style %}{% endblock extra_style %}
+
+  {% block modernizr %}
+  <script src="{{ STATIC_URL }}scripts/libs/modernizr-2.5.3.min.js"></script>
+  {% endblock %}
+
+  {% block jquery_js %}
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}scripts/libs/jquery-1.7.2.min.js"><\/script>')</script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+  {% endblock jquery_js %}
+
+  {# Include your plugins before main.js and your other JS after main.js #}
+
+  <script src="{{ STATIC_URL }}scripts/main.js"></script>
+
+
+  {% block extra_script %}{% endblock extra_script %}
+
+  {% block extra_head %}{% endblock extra_head %}
+
+  {% if NOINDEX %}<meta name="robots" content="noindex, nofollow">{% endif %}
+
+</head>
+
+{% block body %}
+<body id="page-{% block bodyid %}{% endblock bodyid %}" class="{% block bodyclass %}{% endblock bodyclass %}">
+    {% block pre_wrap %}{% endblock pre_wrap %}
+{% block wrap %}
+<div class="wrapper">
+<header>
+  <h1>Index</h1>
+  <p>Incuna's visual tagging database.
+  {% if user.is_authenticated %}
+    Welcome, {{ user }}. <a href="{% url logout %}">Log out</a>.
+  {% endif %}</p>
+  <div id="paper-clip">
+    <p></p>
+  </div>
+</header>
+  <div class="main">
+    {% block content %}
+    {% endblock content %}
+</div>
+{% endblock wrap %}
+<footer>
+
+</footer>
+
+</body>
+{% endblock %}
+</html>

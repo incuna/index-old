@@ -1,0 +1,11 @@
+export DEBUG=True
+export DEVELOPMENT_SITE=True
+export EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
+export DEFAULT_FILE_STORAGE=cloudfront
+export AWS_ACCESS_KEY_ID=189Q0R1Y94B6FQ5B6382
+export AWS_SECRET_ACCESS_KEY=3ivo6zMjtwaIERP+l69lWRLcYRvl5n9BDu2LLHqc
+export AWS_STORAGE_BUCKET_NAME=rocheoncology-dev
+export AWS_CLOUDFRONT_DOMAIN=dkq8kg0wsteh2.cloudfront.net
+export AWS_CLOUDFRONT_STREAMING_DOMAIN=scmbqd0qe50bf.cloudfront.net
+export GOOGLE_OAUTH2_CLIENT_ID=223063904227.apps.googleusercontent.com
+export GOOGLE_OAUTH2_CLIENT_SECRET=KRnBzQ6Aa3jcoI5lLnU869eN

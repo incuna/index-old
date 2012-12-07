@@ -1,0 +1,5 @@
+db.sqlite
+local_settings.py
+static_media
+client_media
+.sass-cache

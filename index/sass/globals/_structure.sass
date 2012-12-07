@@ -1,0 +1,79 @@
+body
+  background: #ececec url(body-bg.png) repeat-x
+  color: #CCC
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+
+header
+  background: url(header-bg.png) no-repeat 0 30px
+  width: 1200px
+  height: 200px
+  margin: 0 auto
+  position: relative
+  h1
+    font-family: 'Signika', Arial, serif
+    font-weight: 600
+    font-size: 40px
+    color: #FF6666
+    padding: 80px 0 30px 120px
+  p
+    color: #FF6666
+    font-size: 12px
+    padding-left: 120px
+
+div#paper-clip
+  width: 180px
+  height: 127px
+  background: url(paper-clip-bg.png) no-repeat
+  position: absolute
+  top: 40px
+  right: 220px
+  p
+    padding: 70px 60px
+
+.main
+  width: 960px
+  margin: 10px auto
+  h2
+    font-size: 36px
+    margin: 20px 0
+    span.active-tag
+      color: #888
+
+ul
+  &#filter
+    margin: 12px 0
+    width: 460px
+    /*overflow: hidden;
+    li
+      list-style: none
+      float: left
+      font-size: 28px
+      margin-right: 8px
+      line-height: 32px
+      a
+        color: #FF6666
+        text-decoration: none
+        &:hover
+          color: #CCCCCC
+          text-decoration: underline
+      &:after
+        content: ","
+        color: #FF6666
+      &:last-of-type::after
+        content: ""
+      &.current a
+        color: #888
+  &#resources
+    margin-left: 0
+    /*overflow: hidden;
+    li
+      list-style: none
+      float: left
+      margin-right: 20px
+      margin-bottom: 20px
+      img
+        background: #fff
+        border: 1px solid #CCC
+
+.clear-fix
+  clear: both

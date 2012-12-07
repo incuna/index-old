@@ -1,0 +1,159 @@
+[
+    {
+        "pk": 1,
+        "model": "index.tag",
+        "fields": {
+            "name": "eDetailing",
+            "slug": "edetailing"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "index.tag",
+        "fields": {
+            "name": "iPad",
+            "slug": "ipad"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "index.tag",
+        "fields": {
+            "name": "eCommerce",
+            "slug": "ecommerce"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "index.tag",
+        "fields": {
+            "name": "eSelling",
+            "slug": "eselling"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "index.tag",
+        "fields": {
+            "name": "CLM",
+            "slug": "clm"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "index.tag",
+        "fields": {
+            "name": "Delivery Teams",
+            "slug": "delivery-teams"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "index.tag",
+        "fields": {
+            "name": "Timeline",
+            "slug": "timeline"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "index.tag",
+        "fields": {
+            "name": "CMS",
+            "slug": "CMS"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "index.tag",
+        "fields": {
+            "name": "USP",
+            "slug": "usp"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "index.tag",
+        "fields": {
+            "name": "Groups",
+            "slug": "groups"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "index.tag",
+        "fields": {
+            "name": "Expertise",
+            "slug": "expertise"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "index.tag",
+        "fields": {
+            "name": "Digital",
+            "slug": "digital"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "index.tag",
+        "fields": {
+            "name": "Mobile",
+            "slug": "mobile"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "index.indexcard",
+        "fields": {
+            "name": "test card",
+            "slug": "test-card",
+            "tags": [
+                1,
+                2,
+                3
+            ]
+        }
+    },
+    {
+        "pk": 2,
+        "model": "index.indexcard",
+        "fields": {
+            "name": "some funny card",
+            "slug": "some-funny-card",
+            "tags": [
+                1,
+                8,
+                9
+            ]
+        }
+    },
+    {
+        "pk": 3,
+        "model": "index.indexcard",
+        "fields": {
+            "name": "wet card",
+            "slug": "wet-card",
+            "tags": [
+                10,
+                11
+            ]
+        }
+    },
+    {
+        "pk": 4,
+        "model": "index.indexcard",
+        "fields": {
+            "name": "coffee card",
+            "slug": "coffee-card",
+            "tags": [
+                4,
+                5,
+                9,
+                10,
+                13
+            ]
+        }
+    }
+]
