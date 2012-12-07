@@ -12,7 +12,6 @@ from social_auth.views import complete
 from .models import CardImage, IndexCard, Tag
 
 
-@class_view_decorator(login_required)
 class HomeView(ListView):
     """Index page lists all cards."""
     template_name = 'home.html'

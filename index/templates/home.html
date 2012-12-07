@@ -3,23 +3,27 @@
 {% load thumbnail %}
 
 {% block content %}
-<h2 id="header">Showing <span data-filter="popular">Popular</span> <span data-filter="latest">Latest</span> <span data-filter="all" class="active-tag">All</span> Tags</h2>
-    {% if tags %}
-    <ul id="filter">
-        <li class="current"><a href="#">All</a></li>
-        {% for tag in tags %}
-            <li><a href="#">{{ tag.name }}</a></li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-    <div class="clear-fix"></div>
+    {% if user.is_authenticated %}
+        <h2 id="header">Showing <span data-filter="popular">Popular</span> <span data-filter="latest">Latest</span> <span data-filter="all" class="active-tag">All</span> Tags</h2>
+        {% if tags %}
+        <ul id="filter">
+            <li class="current"><a href="#">All</a></li>
+            {% for tag in tags %}
+                <li><a href="#">{{ tag.name }}</a></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <div class="clear-fix"></div>
 
-    <h2>Visuals</h2>
-    <ul id="resources">
-    {% for image in object_list %}
-        {% thumbnail image.imagefile "200x150" as imagefile %}
-          <li class="draggable {{ image.get_tags|join:" " }}" data-latest="{{ image.created|date:"U" }}" data-popular="{{ image.popular }}" data-all="{{ forloop.counter }}"><a href="{{ imagefile.indexcard.get_absolute_url }}"><img src="{{ imagefile.url }}" style="margin:{{ imagefile|margin:"200x150" }}"/></a></li>
-        {% endthumbnail %}
-    {% endfor %}
-    </ul>
+        <h2>Visuals</h2>
+        <ul id="resources">
+            {% for image in object_list %}
+            {% thumbnail image.imagefile "200x150" as imagefile %}
+            <li class="draggable {{ image.get_tags|join:" " }}" data-latest="{{ image.created|date:"U" }}" data-popular="{{ image.popular }}" data-all="{{ forloop.counter }}"><a href="{{ imagefile.indexcard.get_absolute_url }}"><img src="{{ imagefile.url }}" style="margin:{{ imagefile|margin:"200x150" }}"/></a></li>
+            {% endthumbnail %}
+            {% endfor %}
+        </ul>
+    {% else %}
+        <a href="{% url socialauth_begin 'google-oauth2' %}" class="button">Log in</a>
+    {% endif %}
 {% endblock content %}

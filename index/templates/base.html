@@ -48,10 +48,7 @@
 <div class="wrapper">
 <header>
   <h1>Index</h1>
-  <p>Incuna's visual tagging database.
-  {% if user.is_authenticated %}
-    Welcome, {{ user }}. <a href="{% url logout %}">Log out</a>.
-  {% endif %}</p>
+  <p>Incuna's visual tagging database. {% if user.is_authenticated %}Welcome, {{ user }}.{% endif %}</p>
   <div id="paper-clip">
     <p></p>
   </div>
