@@ -7,7 +7,7 @@ from django.views.generic import DetailView, ListView
 from django.views.generic.base import View
 
 from incuna.utils import class_view_decorator
-from social_auth.exceptions import AuthFailed
+from social_auth.backends.exceptions import AuthFailed
 from social_auth.views import complete
 
 from .models import CardImage, IndexCard, Tag
