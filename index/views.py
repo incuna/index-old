@@ -22,7 +22,7 @@ class HomeView(ListView):
 
     def get_queryset(self):
         """Shows recent image for every Card Image."""
-        return CardImage.objects.order_by('indexcard', '-id').distinct('indexcard')
+        return CardImage.objects.order_by('indexcard', '-id')
 
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
